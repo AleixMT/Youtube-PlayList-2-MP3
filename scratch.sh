@@ -22,5 +22,5 @@ echo "Transforming mp4 files to mp3"
 # Transform into mp3 using ffmpeg and conserving filename (assuming that ".mp4" extension is always present).
 for file_name in current/*; do
   echo "Transforming song ${file_name}"
-  ffmpeg -i "current/${file_name}" "$(echo "${file_name}" | rev | cut -d "." -f2- | rev)".mp3
+  ffmpeg -i "${file_name}" "$(echo "${file_name}" | rev | cut -d "." -f2- | rev)".mp3
 done
